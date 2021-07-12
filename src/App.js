@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "antd/dist/antd.css";
+import "./styles.css";
+import { BrowserRouter, Redirect, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import DetailsPage from "./pages/details";
+import TosPage from "./pages/tos";
+import HeaderComponent from "./layout/header";
+
+export default function App() {
+	return (
+		<div className="App">
+			<BrowserRouter>
+				<HeaderComponent />
+				<Route path="/">{<Redirect to="/netcentric/public/verification" />}</Route>
+				<Route exact path="/netcentric/public/verification" component={LandingPage} />
+
+				<Route exact path="/netcentric/public/jerome-gacoscosim" component={DetailsPage} />
+
+				<Route exact path="/public/tos" component={TosPage} />
+			</BrowserRouter>
+		</div>
+	);
 }
-
-export default App;
