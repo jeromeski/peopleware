@@ -12,8 +12,8 @@ body {
   height: 100%;
   min-height: 100vh;
   position: relative;
-  background-color: white;
   width: 100%;
+  background-color: #f0f2f5;
 }
 
 .root {
@@ -108,6 +108,11 @@ ul {
   height: 100%;
   width: 12rem;
   margin: 0;
+}
+
+.page-layout {
+  margin-bottom: 1rem;
+  padding: 15px;
 }
 
 .tos-link-wrapper {
@@ -217,12 +222,12 @@ ul {
 
 /* start common components */
 
-.back-btn {
-  margin-top: 4rem;
+.back-btn-wrapper, .details-btn-wrapper {
+  margin-top: 1.5rem;
 }
 
-@media only screen and (max-width: 400px) {
-  .back-btn {
+@media only screen and (max-width: 450px) {
+  .back-btn-wrapper, .details-btn-wrapper {
     margin-left: 1rem !important;
   }
 }
@@ -306,6 +311,11 @@ ul {
 
 /* start overrides */
 
+.ant-btn-round.ant-btn-lg {
+  background-color: skyblue !important;
+  border-color: lightskyblue !important;
+}
+
 .ant-card-bordered {
   width: 80vw;
   border-left: 10px solid lightgray;
@@ -321,7 +331,7 @@ ul {
   margin-left: .5rem;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
   .ant-card-bordered {
     padding: 0 !important;
     width: 100vw;

@@ -1,19 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Col, Row } from "antd";
 import { Formik } from "formik";
 import { SubmitButton, Form, Input } from "formik-antd";
-import Recaptcha from "react-recaptcha";
 import { recaptchaKey } from "../../config";
+import ReCAPTCHA from "react-google-recaptcha";
 
-function FormComponent({ initialValues, validationSchema, onSubmit, setIsVerified, error, xs }) {
-	const onLoadCallback = () => {
-		console.log("Recaptcha has loaded successfully!");
-	};
-
-	const onVerify = (response) => {
-		if (response) setIsVerified(true);
-	};
-
+function FormComponent({ initialValues, validationSchema, onSubmit, setToken, error, xs }) {
+	let reCaptcha = useRef();
+	console.count("form :");
 	return (
 		<Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
 			{
@@ -29,11 +23,12 @@ function FormComponent({ initialValues, validationSchema, onSubmit, setIsVerifie
 						<Col span={`${xs ? 24 : 18}`} offset={`${!xs ? 2 : ""}`}>
 							<Row>
 								<Col>
-									<Recaptcha
+									<ReCAPTCHA
+										className="mt-1"
+										ref={reCaptcha}
 										sitekey={recaptchaKey}
-										render="explicit"
-										onloadCallback={onLoadCallback}
-										verifyCallback={onVerify}
+										onChange={(token) => setToken(token)}
+										onExpired={(e) => setToken("")}
 									/>
 									<span className="error-recaptcha">{error}</span>
 								</Col>

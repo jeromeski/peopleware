@@ -21,9 +21,11 @@ function DetailsContainer() {
 							</Col>
 						</Row>
 					</Card>
-					<Button className="back-btn" type="primary" shape="round" size="large">
-						<Link to="/netcentric/public/verification">Back</Link>
-					</Button>
+					<div className="details-btn-wrapper">
+						<Button className="back-btn" type="primary" shape="round" size="large">
+							<Link to="/netcentric/public/verification">Back</Link>
+						</Button>
+					</div>
 				</Col>
 			</Row>
 		</Fragment>

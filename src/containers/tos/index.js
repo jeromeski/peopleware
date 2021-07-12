@@ -1,13 +1,14 @@
 import { Button, Col, Row } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
+import PageLayout from "../../layout";
 
 function TosContainer() {
 	return (
 		<div className="tos">
 			<Row justify="center">
 				<Col lg={16}>
-					<div className="p-content">
+					<PageLayout>
 						<h1 className="text-center">Website Terms and Conditions of Use</h1>
 
 						<h2>1. Terms</h2>
@@ -104,10 +105,12 @@ function TosContainer() {
 							Any claim related to Peopleware's Website shall be governed by the laws of sg without
 							regards to its conflict of law provisions.
 						</p>
-					</div>
-					<Button className="back-btn" type="primary" shape="round" size="large">
-						<Link to="/netcentric/public/verification">Back</Link>
-					</Button>
+						<div className="back-btn-wrapper">
+							<Button type="primary" shape="round" size="large">
+								<Link to="/netcentric/public/verification">Back</Link>
+							</Button>
+						</div>
+					</PageLayout>
 				</Col>
 			</Row>
 		</div>

@@ -5,18 +5,23 @@ import React from "react";
 function ModalComponent({ show, onOk, onCancel }) {
 	return (
 		<Modal
-			title={[<CloseCircleOutlined />, <span className="modal-title">Error</span>]}
+			title={[
+				<CloseCircleOutlined key="5" />,
+				<span className="modal-title" key="6">
+					Error
+				</span>
+			]}
 			visible={show}
 			onOk={onOk}
 			onCancel={onCancel}
 			keyboard={true}
 			okType="secondary">
-			<h3>
+			<h3 key={"1"}>
 				Sorry, we can't find that ID in the database. Please check your input for the following
 				cases:
 			</h3>
-			<p>- Wrong input of characters</p>
-			<p>- Overlooked trailing spaces</p>
+			<p key="2">- Wrong input of characters</p>
+			<p key="3">- Overlooked trailing spaces</p>
 		</Modal>
 	);
 }
