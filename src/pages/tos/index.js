@@ -1,9 +1,12 @@
 import React, { Fragment } from "react";
-import { Button, Col, Row } from "antd";
-import { Link } from "react-router-dom";
+import TosContainer from "../../containers/tos";
 
 function TosPage() {
-	return <Fragment></Fragment>;
+	return (
+		<Fragment>
+			<TosContainer />
+		</Fragment>
+	);
 }
 
 export default TosPage;

@@ -1,7 +1,7 @@
 import { Button } from "antd";
 import React from "react";
 import { useHistory } from "react-router-dom";
-import logo from "../assets/images/logo.png";
+import logo from "../../assets/images/logo.png";
 
 function LogoComponent() {
 	const history = useHistory();

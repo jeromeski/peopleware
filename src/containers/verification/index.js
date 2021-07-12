@@ -1,31 +1,31 @@
 import React, { useState } from "react";
-import { Col, Row } from "antd";
+import { Col, Row, Grid } from "antd";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
-import { submitWithCaptcha } from "../api";
-import SpinContainer from "../containers/spin";
-import { instructions } from "../data";
+import { instructions } from "../../data";
 import FormComponent from "../../components/form";
 import ModalComponent from "../../components/modal";
-import Grid from "antd/lib/card/Grid";
+import SpinContainer from "../spin";
 
 const initialValues = {
 	id: ""
 };
 
+const errorFormat = "The format you entered is not valid.";
+
 const validationSchema = Yup.object({
 	id: Yup.string()
 		.required("This field is required")
-		.matches(/^[0-9]+$/, "Must be only digits")
-		.min(6, "Wrong ID Format")
-		.max(6, "Wrong ID Format")
+		.matches(/^[0-9]+$/, errorFormat)
+		.min(6, errorFormat)
+		.max(6, errorFormat)
 });
 
 function VerificationContainer() {
 	const [loading, setLoading] = useState(false);
 	const [showModal, setIsModalVisible] = useState(false);
-	const [error, setError] = useState("");
-	const [token, setToken] = useState("");
+	const [captchaError, setCaptchaError] = useState("");
+	const [isVerified, setIsVerified] = useState(false);
 
 	const history = useHistory();
 
@@ -39,12 +39,6 @@ function VerificationContainer() {
 	const onSubmit = (values) => {
 		setLoading(true);
 
-		if (!token) {
-			setLoading(false);
-			setError("You must verify captcha");
-			return;
-		}
-
 		if (values.id !== "491342") {
 			const timeout = setTimeout(() => {
 				setLoading(false);
@@ -54,30 +48,18 @@ function VerificationContainer() {
 			return;
 		}
 
-		submitWithCaptcha(token)
-			.then((res) => {
-				// reCaptcha.current.reset();
-				setLoading(false);
-				setToken("");
-				history.push("/netcentric/public/jerome-gacoscosim");
-			})
-			.catch(({ res }) => {
-				setLoading(false);
-				setError(res);
-			});
+		if (isVerified) {
+			setLoading(false);
+			history.push("/netcentric/public/jerome-gacoscosim");
+		} else {
+			setLoading(false);
+			setCaptchaError("Invalid Captcha.");
+		}
 	};
 
 	const { useBreakpoint } = Grid;
 	const screens = useBreakpoint();
 	const { xs } = screens;
-
-	const props = {
-		initialValues,
-		onSubmit,
-		error,
-		validationSchema,
-		xs
-	};
 
 	if (loading) return <SpinContainer />;
 
@@ -86,7 +68,14 @@ function VerificationContainer() {
 			<Row align="middle">
 				<Col span={`${xs ? 24 : 18}`} offset={`${!xs ? 3 : ""}`}>
 					<p>{instructions}</p>
-					<FormComponent {...props} />
+					<FormComponent
+						initialValues={initialValues}
+						onSubmit={onSubmit}
+						error={captchaError}
+						validationSchema={validationSchema}
+						xs={xs}
+						setIsVerified={setIsVerified}
+					/>
 					<ModalComponent show={showModal} onCancel={handleCancel} onOk={handleOk} />
 				</Col>
 			</Row>

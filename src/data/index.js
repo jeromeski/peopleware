@@ -1,5 +1,5 @@
 export const instructions =
-	"Please enter the employee id from the CERTIFICATE OF EMPLOYMENT. Click submit to find the employee information. After viewing the verification information, you may continue to use this form to verify additional employees as needed.";
+	"Please enter the code from the COE that has been provided. Click submit to find the employee information. After viewing the verification information, you may continue to use this form to verify additional employees as needed.";
 
 export const dataSource = [
 	{

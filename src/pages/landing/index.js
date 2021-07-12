@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import VerificationContainer from "../../containers/verification";
-import PageLayout from "../layout";
+import PageLayout from "../../layout";
 
 function LandingPage() {
 	return (

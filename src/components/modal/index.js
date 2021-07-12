@@ -11,9 +11,12 @@ function ModalComponent({ show, onOk, onCancel }) {
 			onCancel={onCancel}
 			keyboard={true}
 			okType="secondary">
-			<h3>Sorry, we can't find that ID in the database. Please check your input for:</h3>
-			<p>- Trailing spaces</p>
-			<p>- Wrong characters</p>
+			<h3>
+				Sorry, we can't find that ID in the database. Please check your input for the following
+				cases:
+			</h3>
+			<p>- Wrong input of characters</p>
+			<p>- Overlooked trailing spaces</p>
 		</Modal>
 	);
 }

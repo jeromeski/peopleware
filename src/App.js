@@ -1,11 +1,11 @@
 import "antd/dist/antd.css";
 import "./styles.css";
 import { BrowserRouter, Redirect, Route } from "react-router-dom";
-import LandingPage from "./pages/LandingPage";
 
 import DetailsPage from "./pages/details";
 import TosPage from "./pages/tos";
 import HeaderComponent from "./layout/header";
+import LandingPage from "./pages/landing";
 
 export default function App() {
 	return (

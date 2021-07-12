@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import LogoComponent from "../logo";
 
 function Navbar() {
 	return (
-		<Fragment>
+		<div className="nav-bar">
 			<div className="logo-wrapper">
 				<LogoComponent />
 			</div>
@@ -13,7 +13,7 @@ function Navbar() {
 					Terms of Service
 				</Link>
 			</div>
-		</Fragment>
+		</div>
 	);
 }
 
