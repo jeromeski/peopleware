@@ -104,7 +104,7 @@ Font.register({
 	src: "https://fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-UFVZ0e.ttf"
 });
 
-function PdfTable() {
+function PdfTable({ fname }) {
 	const uniqId = uuidv4();
 
 	return (
@@ -165,7 +165,7 @@ function PdfTable() {
 				</Table>
 				<View style={styles.section2}>
 					<Text style={styles.subtitle2}>{`Time requested: ${new Date().toLocaleString()}`}</Text>
-					<Text style={styles.subtitle2}>{`Requested By: Gacoscosim-Jerome4870853084 
+					<Text style={styles.subtitle2}>{`Requested By: ${fname} 
 `}</Text>
 					<Text style={styles.subtitle2}>{`Transaction Id: ${uniqId}`}</Text>
 				</View>
