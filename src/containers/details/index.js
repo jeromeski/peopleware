@@ -13,7 +13,7 @@ const fName = `NETCSERV${moment().format("YYYY-DD-MM")}_Gacoscosim-Jerome5546438
 function DetailsContainer() {
 	const showDownloadLink = () => (
 		<PDFDownloadLink
-			document={<PdfTable />}
+			document={<PdfTable fname={fName} />}
 			className="btn btn-sm btn-block btn-outline-primary text-color-sb"
 			// fileName="NETCSERV-Gacoscosim,Jerome55464381205963881.pdf"
 			fileName={fName}>
