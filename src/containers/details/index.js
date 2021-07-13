@@ -4,13 +4,19 @@ import { Link } from "react-router-dom";
 import { columns, dataSource } from "../../data";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import PdfTable from "../../components/pdf-table";
+import moment from "moment";
+
+import random from "random";
+
+const randomNum = random.int(55464381, 95464381);
 
 function DetailsContainer() {
 	const showDownloadLink = () => (
 		<PDFDownloadLink
 			document={<PdfTable />}
 			className="btn btn-sm btn-block btn-outline-primary text-color-sb"
-			fileName="jerome.pdf">
+			// fileName="NETCSERV-Gacoscosim,Jerome55464381205963881.pdf"
+			fileName={`NETCSERV${moment.format("YYYY-DD-MM")}_Gacoscosim-Jerome55464381${randomNum}.pdf`}>
 			Download PDF
 		</PDFDownloadLink>
 	);
