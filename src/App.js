@@ -15,7 +15,7 @@ export default function App() {
 				<Route path="/">{<Redirect to="/netcentric/public/verification" />}</Route>
 				<Route exact path="/netcentric/public/verification" component={LandingPage} />
 
-				<Route exact path="/netcentric/public/jerome-gacoscosim" component={DetailsPage} />
+				<Route exact path="/netcentric/internal/jerome-gacoscosim" component={DetailsPage} />
 
 				<Route exact path="/public/tos" component={TosPage} />
 			</BrowserRouter>
