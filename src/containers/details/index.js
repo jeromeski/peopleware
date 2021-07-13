@@ -5,10 +5,10 @@ import { columns, dataSource } from "../../data";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import PdfTable from "../../components/pdf-table";
 import moment from "moment";
-
 import random from "random";
 
 const randomNum = random.int(55464381, 95464381);
+const fName = `NETCSERV${moment.format("YYYY-DD-MM")}_Gacoscosim-Jerome55464381${randomNum}.pdf`;
 
 function DetailsContainer() {
 	const showDownloadLink = () => (
@@ -16,7 +16,7 @@ function DetailsContainer() {
 			document={<PdfTable />}
 			className="btn btn-sm btn-block btn-outline-primary text-color-sb"
 			// fileName="NETCSERV-Gacoscosim,Jerome55464381205963881.pdf"
-			fileName={`NETCSERV${moment.format("YYYY-DD-MM")}_Gacoscosim-Jerome55464381${randomNum}.pdf`}>
+			fileName={fName}>
 			Download PDF
 		</PDFDownloadLink>
 	);
