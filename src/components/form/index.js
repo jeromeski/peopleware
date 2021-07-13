@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Col, Row } from "antd";
 import { Formik } from "formik";
 import { SubmitButton, Form, Input } from "formik-antd";
-import { recaptchaKey } from "../../config";
+import { recaptchaKy } from "../../config";
 import ReCAPTCHA from "react-google-recaptcha";
 
 function FormComponent({ initialValues, validationSchema, onSubmit, setToken, error, xs }) {
@@ -26,7 +26,7 @@ function FormComponent({ initialValues, validationSchema, onSubmit, setToken, er
 									<ReCAPTCHA
 										className="mt-1"
 										ref={reCaptcha}
-										sitekey={recaptchaKey}
+										sitekey={recaptchaKy}
 										onChange={(token) => setToken(token)}
 										onExpired={(e) => setToken("")}
 									/>

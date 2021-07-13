@@ -2,7 +2,7 @@ import { Button, Card, Col, Row, Table } from "antd";
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { columns, dataSource } from "../../data";
-import { PDFDownloadLink, PDFViewer, Document, Page, View, Text } from "@react-pdf/renderer";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import PdfTable from "../../components/pdf-table";
 
 function DetailsContainer() {
