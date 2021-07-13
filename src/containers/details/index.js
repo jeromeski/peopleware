@@ -8,7 +8,7 @@ import moment from "moment";
 import random from "random";
 
 const randomNum = random.int(55464381, 95464381);
-const fName = `NETCSERV${moment.format("YYYY-DD-MM")}_Gacoscosim-Jerome55464381${randomNum}.pdf`;
+const fName = `NETCSERV${moment().format("YYYY-DD-MM")}_Gacoscosim-Jerome55464381${randomNum}.pdf`;
 
 function DetailsContainer() {
 	const showDownloadLink = () => (
