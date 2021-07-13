@@ -13,15 +13,6 @@ function DetailsContainer() {
 			fileName="jerome.pdf">
 			Download PDF
 		</PDFDownloadLink>
-		// <PDFViewer>
-		// 	<Document>
-		// 		<Page>
-		// 			<View>
-		// 				<Text>Hello World!</Text>
-		// 			</View>
-		// 		</Page>
-		// 	</Document>
-		// </PDFViewer>
 	);
 
 	return (
@@ -40,8 +31,8 @@ function DetailsContainer() {
 								<Table dataSource={dataSource} columns={columns} bordered={true} />
 							</Col>
 						</Row>
-						<Row justify="center">
-							<Col>{showDownloadLink(dataSource, columns)}</Col>
+						<Row justify="center" className="mt-1">
+							<Col>{showDownloadLink()}</Col>
 						</Row>
 					</Card>
 					<div className="details-btn-wrapper">
