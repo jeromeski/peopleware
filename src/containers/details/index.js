@@ -2,8 +2,28 @@ import { Button, Card, Col, Row, Table } from "antd";
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { columns, dataSource } from "../../data";
+import { PDFDownloadLink, PDFViewer, Document, Page, View, Text } from "@react-pdf/renderer";
+import PdfTable from "../../components/pdf-table";
 
 function DetailsContainer() {
+	const showDownloadLink = () => (
+		<PDFDownloadLink
+			document={<PdfTable />}
+			className="btn btn-sm btn-block btn-outline-primary text-color-sb"
+			fileName="jerome.pdf">
+			Download PDF
+		</PDFDownloadLink>
+		// <PDFViewer>
+		// 	<Document>
+		// 		<Page>
+		// 			<View>
+		// 				<Text>Hello World!</Text>
+		// 			</View>
+		// 		</Page>
+		// 	</Document>
+		// </PDFViewer>
+	);
+
 	return (
 		<Fragment>
 			<Row span={24} justify="center">
@@ -19,6 +39,9 @@ function DetailsContainer() {
 							<Col>
 								<Table dataSource={dataSource} columns={columns} bordered={true} />
 							</Col>
+						</Row>
+						<Row justify="center">
+							<Col>{showDownloadLink(dataSource, columns)}</Col>
 						</Row>
 					</Card>
 					<div className="details-btn-wrapper">

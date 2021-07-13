@@ -14,8 +14,8 @@ function FormComponent({ initialValues, validationSchema, onSubmit, setToken, er
 				<Form>
 					<Row>
 						<Col xl={12} lg={20} md={24} sm={24} xs={24}>
-							<Form.Item name="id" label="Employee ID:" className="mt-2">
-								<Input className="input-id" name="id" placeholder="Enter employee ID" />
+							<Form.Item name="id" label="Employee Code:" className="mt-2">
+								<Input className="input-id" name="id" placeholder="Enter code" />
 							</Form.Item>
 						</Col>
 					</Row>

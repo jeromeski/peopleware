@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { Col, Row, Grid } from "antd";
-import { Formik } from "formik";
-import { SubmitButton, Form, Input } from "formik-antd";
-import { recaptchaKey } from "../../config";
-import ReCAPTCHA from "react-google-recaptcha";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import { instructions } from "../../data";
-// import FormComponent from "../../components/form";
+import FormComponent from "../../components/form";
 import ModalComponent from "../../components/modal";
 import SpinContainer from "../spin";
 
@@ -78,7 +74,7 @@ function VerificationContainer() {
 			<Row align="middle">
 				<Col span={`${xs ? 24 : 18}`} offset={`${!xs ? 3 : ""}`}>
 					<p>{instructions}</p>
-					{/*<FormComponent
+					<FormComponent
 						initialValues={initialValues}
 						onSubmit={onSubmit}
 						error={captchaError}
@@ -86,42 +82,8 @@ function VerificationContainer() {
 						xs={xs}
 						// setIsVerified={setIsVerified}
 						setToken={setToken}
-          />*/}
-					<Formik
-						initialValues={initialValues}
-						validationSchema={validationSchema}
-						onSubmit={onSubmit}>
-						{
-							<Form>
-								<Row>
-									<Col xl={12} lg={20} md={24} sm={24} xs={24}>
-										<Form.Item name="id" label="Employee ID:" className="mt-2">
-											<Input className="input-id" name="id" placeholder="Enter employee ID" />
-										</Form.Item>
-									</Col>
-								</Row>
-								<Row>
-									<Col span={`${xs ? 24 : 18}`} offset={`${!xs ? 2 : ""}`}>
-										<Row>
-											<Col>
-												<ReCAPTCHA
-													className="mt-1"
-													// ref={reCaptcha}
-													sitekey={recaptchaKey}
-													onChange={(token) => setToken(token)}
-													onExpired={(e) => setToken("")}
-												/>
-												<span className="error-recaptcha">{captchaError}</span>
-											</Col>
-										</Row>
-										<SubmitButton className="mt-3" type="primary" shape="round" size="large">
-											Submit
-										</SubmitButton>
-									</Col>
-								</Row>
-							</Form>
-						}
-					</Formik>
+					/>
+
 					<ModalComponent show={showModal} onCancel={handleCancel} onOk={handleOk} />
 				</Col>
 			</Row>

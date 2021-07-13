@@ -104,7 +104,6 @@ ul {
 }
 
 .logo-wrapper {
-  padding-left: 15px;
   height: 100%;
   width: 12rem;
   margin: 0;
@@ -304,6 +303,10 @@ ul {
 .error-recaptcha {
   color: red;
   font-weight: 400;
+}
+
+.text-color-sb {
+  color: skyblue !important;
 }
 
 

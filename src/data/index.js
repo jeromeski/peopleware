@@ -55,3 +55,16 @@ export const columns = [
 		responsive: ["md"]
 	}
 ];
+
+export const pdfData = [
+	{
+		company: "Netcentric",
+		employeeId: "492785",
+		name: "Gacoscosim, Jerome M.",
+		position: "Jr React Developer",
+		startDate: "03/07/18",
+		endDate: "07/31/19",
+		status: "Resigned",
+		remarks: "Cleared"
+	}
+];
