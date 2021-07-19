@@ -46,7 +46,7 @@ function VerificationContainer() {
 			return;
 		}
 
-		if (values.id !== "491342") {
+		if (values.id !== "JGACOSCOSIM2082058S70WT1JS19OCP") {
 			const timeout = setTimeout(() => {
 				setLoading(false);
 				setIsModalVisible(true);
