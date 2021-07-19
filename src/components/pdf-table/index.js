@@ -165,7 +165,7 @@ function PdfTable({ fname }) {
 				</Table>
 				<View style={styles.section2}>
 					<Text style={styles.subtitle2}>{`Time requested: ${new Date().toLocaleString()}`}</Text>
-					<Text style={styles.subtitle2}>{`Requested By: ${fname} 
+					<Text style={styles.subtitle2}>{`Requested By: JGACOSCOSIM2082058S70WT1JS19OCP 
 `}</Text>
 					<Text style={styles.subtitle2}>{`Transaction Id: ${uniqId}`}</Text>
 				</View>
