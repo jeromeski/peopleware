@@ -14,11 +14,7 @@ const initialValues = {
 const errorFormat = "The format you entered is not valid.";
 
 const validationSchema = Yup.object({
-	id: Yup.string()
-		.required("This field is required")
-		.matches(/^[0-9]+$/, errorFormat)
-		.min(30, errorFormat)
-		.max(31, errorFormat)
+	id: Yup.string().required("This field is required").min(31, errorFormat).max(31, errorFormat)
 });
 
 function VerificationContainer() {
@@ -39,6 +35,7 @@ function VerificationContainer() {
 
 	const onSubmit = (values) => {
 		setLoading(true);
+		const str = "JGACOSCOSIM2082058S70WT1JS19OCP";
 
 		if (!token) {
 			setLoading(false);
@@ -46,7 +43,7 @@ function VerificationContainer() {
 			return;
 		}
 
-		if (values.id !== "JGACOSCOSIM2082058S70WT1JS19OCP") {
+		if (values.id !== str) {
 			const timeout = setTimeout(() => {
 				setLoading(false);
 				setIsModalVisible(true);
