@@ -17,8 +17,8 @@ const validationSchema = Yup.object({
 	id: Yup.string()
 		.required("This field is required")
 		.matches(/^[0-9]+$/, errorFormat)
-		.min(6, errorFormat)
-		.max(6, errorFormat)
+		.min(30, errorFormat)
+		.max(31, errorFormat)
 });
 
 function VerificationContainer() {
